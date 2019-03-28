@@ -10,8 +10,8 @@ Criar uma interface com Vue.js que consuma os dados disponibilizados pelo JSON S
 <li>JSON
 <li>.NET Core</b>
 
-![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560907182628143125/vue1.png)
-![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560907179607982080/json.png)
+![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560907182628143125/vue1.png)<br>
+![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560907179607982080/json.png)<br>
 ![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560906623149801486/net.png)
 ## <b>Rodar projeto</b>
 
