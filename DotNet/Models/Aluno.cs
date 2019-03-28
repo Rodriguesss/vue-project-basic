@@ -1,7 +1,3 @@
-using System;
-using DotNet.Models;
-using Microsoft.EntityFrameworkCore;
-
 namespace DotNet.Models
 {
     public class Aluno
@@ -12,7 +8,5 @@ namespace DotNet.Models
         public string DataNasc { get; set; }
         public int ProfessorId { get; set; }
         public Professor Professor { get; set; }
-
-        public Aluno(){}
     }
 }

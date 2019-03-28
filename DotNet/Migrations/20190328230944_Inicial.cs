@@ -2,7 +2,7 @@
 
 namespace DotNet.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -59,12 +59,17 @@ namespace DotNet.Migrations
             migrationBuilder.InsertData(
                 table: "Alunos",
                 columns: new[] { "Id", "DataNasc", "Nome", "ProfessorId", "Sobrenome" },
-                values: new object[] { 2, null, "Paula", 1, null });
+                values: new object[] { 1, "20/01/1990", "Paula", 1, "Maria" });
 
             migrationBuilder.InsertData(
                 table: "Alunos",
                 columns: new[] { "Id", "DataNasc", "Nome", "ProfessorId", "Sobrenome" },
-                values: new object[] { 3, null, "João", 2, null });
+                values: new object[] { 2, "26/06/1981", "João", 2, "Paulo" });
+
+            migrationBuilder.InsertData(
+                table: "Alunos",
+                columns: new[] { "Id", "DataNasc", "Nome", "ProfessorId", "Sobrenome" },
+                values: new object[] { 3, "26/06/1977", "Pedro", 3, "Bola" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Alunos_ProfessorId",

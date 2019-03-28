@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DotNet.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190328191016_Initial")]
-    partial class Initial
+    [Migration("20190328230944_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,15 +39,27 @@ namespace DotNet.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 2,
+                            Id = 1,
+                            DataNasc = "20/01/1990",
                             Nome = "Paula",
-                            ProfessorId = 1
+                            ProfessorId = 1,
+                            Sobrenome = "Maria"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DataNasc = "26/06/1981",
+                            Nome = "João",
+                            ProfessorId = 2,
+                            Sobrenome = "Paulo"
                         },
                         new
                         {
                             Id = 3,
-                            Nome = "João",
-                            ProfessorId = 2
+                            DataNasc = "26/06/1977",
+                            Nome = "Pedro",
+                            ProfessorId = 3,
+                            Sobrenome = "Bola"
                         });
                 });
 

@@ -37,15 +37,27 @@ namespace DotNet.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 2,
+                            Id = 1,
+                            DataNasc = "20/01/1990",
                             Nome = "Paula",
-                            ProfessorId = 1
+                            ProfessorId = 1,
+                            Sobrenome = "Maria"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DataNasc = "26/06/1981",
+                            Nome = "João",
+                            ProfessorId = 2,
+                            Sobrenome = "Paulo"
                         },
                         new
                         {
                             Id = 3,
-                            Nome = "João",
-                            ProfessorId = 2
+                            DataNasc = "26/06/1977",
+                            Nome = "Pedro",
+                            ProfessorId = 3,
+                            Sobrenome = "Bola"
                         });
                 });
 
