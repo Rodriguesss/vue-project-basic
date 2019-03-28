@@ -2,16 +2,17 @@
 
 ## <b>Objetivo</b>
 
-Criar uma interface com Vue.js consumindo os dados disponibilizados pelo JSON Server.
+Criar uma interface com Vue.js que consuma os dados disponibilizados pelo JSON Server ou .NET Core.
 
 ## <b>Tecnologias</b>
 
 <li><b>Vue.js<br>
-<li>JSON</b>
+<li>JSON
+<li>.NET Core</b>
 
-![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560498882078048264/vue2.png)
-![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560499872432783400/json.png)
-
+![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560907182628143125/vue1.png)
+![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560907179607982080/json.png)
+![Vue.js](https://cdn.discordapp.com/attachments/545281793889402880/560906623149801486/net.png)
 ## <b>Rodar projeto</b>
 
 Entre com o terminal dentro da pasta 'API' e use o comando :
