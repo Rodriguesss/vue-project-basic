@@ -1,8 +1,163 @@
 {
+  "professores": [
+    {
+      "id": 1,
+      "nome": "Fabricio"
+    },
+    {
+      "id": 2,
+      "nome": "Sandro"
+    },
+    {
+      "id": 3,
+      "nome": "Mislene"
+    }
+  ],
   "alunos": [
     {
-      "nome": "Alo",
-      "id": 1
+      "id": 1,
+      "nome": "Lucas",
+      "sobrenome": "Bruno",
+      "professor": {
+        "id": 1,
+        "nome": "Fabricio"
+      }
+    },
+    {
+      "nome": "Vinícius",
+      "sobrenome": "",
+      "dataNasc": "10/08/1999",
+      "professor": {
+        "id": 2,
+        "nome": "Sandro"
+      },
+      "id": 2
+    },
+    {
+      "id": 4,
+      "nome": "Wender",
+      "sobrenome": "",
+      "professor": {
+        "id": 2,
+        "nome": "Sandro"
+      }
+    },
+    {
+      "nome": "Joice",
+      "sobrenome": "",
+      "professor": {
+        "id": 3,
+        "nome": "Mislene"
+      },
+      "id": 5
+    },
+    {
+      "nome": "Rafaela",
+      "sobrenome": "",
+      "professor": {
+        "id": 3,
+        "nome": "Mislene"
+      },
+      "id": 6
+    },
+    {
+      "nome": "Leda",
+      "sobrenome": "",
+      "professor": {
+        "id": 3,
+        "nome": "Mislene"
+      },
+      "id": 7
+    },
+    {
+      "nome": "Leo",
+      "sobrenome": "",
+      "professor": {
+        "id": 3,
+        "nome": "Mislene"
+      },
+      "id": 8
+    },
+    {
+      "id": 9,
+      "nome": "Vinicius ",
+      "sobrenome": "Gomes",
+      "professor": {
+        "id": 1,
+        "nome": "Fabricio"
+      }
+    },
+    {
+      "id": 10,
+      "nome": "Gian",
+      "sobrenome": "Michael",
+      "professor": {
+        "id": 3,
+        "nome": "Mislene"
+      }
+    },
+    {
+      "nome": "Jose Carlos",
+      "sobrenome": "",
+      "professor": {
+        "id": 1,
+        "nome": "Fabricio"
+      },
+      "id": 11
+    },
+    {
+      "nome": "Luan",
+      "sobrenome": "",
+      "professor": {
+        "id": 1,
+        "nome": "Fabricio"
+      },
+      "id": 12
+    },
+    {
+      "nome": "Gustavo",
+      "sobrenome": "",
+      "professor": {
+        "id": 2,
+        "nome": "Sandro"
+      },
+      "id": 13
+    },
+    {
+      "nome": "Alex",
+      "sobrenome": "",
+      "professor": {
+        "id": 2,
+        "nome": "Sandro"
+      },
+      "id": 14
+    },
+    {
+      "nome": "Langhouse",
+      "sobrenome": "",
+      "professor": {
+        "id": 2,
+        "nome": "Sandro"
+      },
+      "id": 15
+    },
+    {
+      "nome": "Gustavo",
+      "sobrenome": "",
+      "professor": {
+        "id": 3,
+        "nome": "Mislene"
+      },
+      "id": 16
+    },
+    {
+      "nome": "Theo",
+      "sobrenome": "",
+      "professor": {
+        "id": 1,
+        "nome": "Fabricio"
+      },
+      "id": 17
     }
   ]
 }
