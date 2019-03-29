@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!loading">
     <titulo :titulo="`Aluno: ${aluno.nome}`" :btnVoltar="!visualizando">
       <button v-show="visualizando" class="btn btn-editar" @click="editar()">Editar</button>
     </titulo>
@@ -17,7 +17,7 @@
           <td class="colPequeno">Nome:</td>
           <td>
             <label v-if="visualizando">{{aluno.nome}}</label>
-            <input v-else v-model="aluno.nome" type="text"/>
+            <input v-else v-model="aluno.nome" type="text">
           </td>
         </tr>
 
@@ -25,7 +25,7 @@
           <td class="colPequeno">Sobrenome:</td>
           <td>
             <label v-if="visualizando">{{aluno.sobrenome}}</label>
-            <input v-else v-model="aluno.sobrenome" type="text"/>
+            <input v-else v-model="aluno.sobrenome" type="text">
           </td>
         </tr>
 
@@ -33,7 +33,7 @@
           <td class="colPequeno">Data Nascimento:</td>
           <td>
             <label v-if="visualizando">{{aluno.dataNasc}}</label>
-            <input v-else v-model="aluno.dataNasc" type="text"/>
+            <input v-else v-model="aluno.dataNasc" type="text">
           </td>
         </tr>
 
@@ -41,11 +41,12 @@
           <td class="colPequeno">Professor:</td>
           <td>
             <label v-if="visualizando">{{aluno.professor.nome}}</label>
-            <select v-else v-model="aluno.professor">
-              <option v-for="(professor, index) in professores"
-               :key="index" :value="professor">
-               {{professor.nome}}
-              </option>
+            <select v-else v-model="aluno.professor.id">
+              <option
+                v-for="(professor, index) in professores"
+                :key="index"
+                :value="professor.id"
+              >{{professor.nome}}</option>
             </select>
           </td>
         </tr>
@@ -54,16 +55,15 @@
 
     <div>
       <div>
-        <button class="btn btn-salvar" @click="salvar()">Salvar</button>
-        <button class="btn btn-cancelar" @click="editar()">Cancelar</button>
+        <button class="btn btn-salvar" @click="salvar(_aluno)">Salvar</button>
+        <button class="btn btn-cancelar" @click="cancelar()">Cancelar</button>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
-import Titulo from '../_share/Titulo'
+import Titulo from "../_share/Titulo";
 
 export default {
   components: {
@@ -72,42 +72,53 @@ export default {
   data() {
     return {
       professores: [],
-      aluno: { },
-      id: "",
-      visualizando: true
-    }
+      aluno: {},
+      id: this.$route.params.aluno_id,
+      visualizando: true,
+      loading: true
+    };
   },
-  mounted(){
-    this.id = this.$route.params.aluno_id
-    this.$http
-    .get('http://localhost:3000/alunos/' + this.id)
-    .then(res => res.json())
-    .then(aluno => this.aluno = aluno)
-
-    this.id = this.$route.params.aluno_id
-    this.$http
-    .get('http://localhost:3000/professores')
-    .then(res => res.json())
-    .then(prof => this.professores = prof)
+  mounted() {
+    this.carregarProfessor();
   },
   methods: {
-    editar(){
+    carregarProfessor() {
+      this.$http
+        .get("http://localhost:5000/api/professor")
+        .then(res => res.json())
+        .then(prof => {
+          this.professores = prof;
+          this.carregarAluno();
+          });
+    },
+    carregarAluno() {
+      this.$http
+        .get(`http://localhost:5000/api/aluno/${this.id}`)
+        .then(res => res.json())
+        .then(aluno => {
+          this.aluno = aluno;
+          this.loading = false;
+          });
+    },
+    editar() {
       this.visualizando = !this.visualizando;
     },
-    salvar(_aluno){
+    salvar(aluno) {
       let _alunoEditar = {
         id: this.aluno.id,
         nome: this.aluno.nome,
         sobrenome: this.aluno.sobrenome,
-        dataNasc: this.aluno.datanasc,
-        professor: this.aluno.professor
+        dataNasc: this.aluno.dataNasc,
+        professorid: this.aluno.professor.id
       }
       this.$http
-      .put(`http://localhost:3000/alunos/${this.aluno.id}`, _alunoEditar)
-      this.visualizando = !this.visualizando;
+        .put(`http://localhost:5000/api/aluno/${this.aluno.id}`, _alunoEditar)
+        .then(res => res.json())
+        .then((aluno) = this.aluno = aluno);
+
     },
-    cancelar(){
-      this.visualizando = this.visualizando;
+    cancelar() {
+      this.visualizando = !this.visualizando;
     }
   }
 };
@@ -119,7 +130,8 @@ export default {
   background-color: rgb(255, 255, 255);
   font-weight: bold;
 }
-input, select{
+input,
+select {
   text-align: left;
   margin: 0px;
   padding: 0px;
@@ -130,30 +142,30 @@ input, select{
   background-color: rgb(243, 245, 245);
   width: 95%;
 }
-select{
+select {
   height: 38px;
   width: 100%;
 }
-.btn-editar{
+.btn-editar {
   float: right;
   margin-right: 5px;
   background-color: rgb(185, 174, 174);
 }
-.btn-editar:hover{
+.btn-editar:hover {
   background-color: rgb(209, 233, 76);
   text-shadow: 1px 1px 1px #000;
   border-bottom: 2px solid #000;
 }
-.btn-salvar{
+.btn-salvar {
   margin-top: 5px;
   margin-right: 3px;
 }
-.btn-salvar:hover{
+.btn-salvar:hover {
   background-color: rgb(83, 221, 90);
   text-shadow: 1px 1px 1px #000;
   border-bottom: 2px solid #000;
 }
-.btn-cancelar:hover{
+.btn-cancelar:hover {
   background-color: rgb(223, 27, 27);
   text-shadow: 1px 1px 1px #000;
   border-bottom: 2px solid #000;

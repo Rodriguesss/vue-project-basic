@@ -1,4 +1,4 @@
-# <b>Projeto Vue.js com Server JSON</b> 
+# <b>Projeto Vue.js com .NET Core e Server JSON</b> 
 
 ## <b>Objetivo</b>
 

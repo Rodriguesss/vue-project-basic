@@ -19,7 +19,11 @@
         </tr>
       </tbody>
       <tfoot v-else>
-        <p>Nenhum Professor Encontrado</p>
+        <tr>
+          <td colspan="3" style="text-align: center">
+            <h5>Nenhum Professor Encontrado</h5>
+          </td>
+        </tr>
       </tfoot>
     </table>
   </div>
@@ -40,7 +44,7 @@ export default {
     },
     mounted() {
       this.$http
-      .get('http://localhost:3000/alunos')
+      .get('http://localhost:5000/api/aluno')
       .then((res) => res.json())
       .then(alunos =>{
         this.alunos = alunos
@@ -63,7 +67,7 @@ export default {
     },
     carregarProfessores(){
       this.$http
-      .get('http://localhost:3000/professores')
+      .get('http://localhost:5000/api/professor')
       .then((res) => res.json())
       .then(professores => {
         this.professores = professores
