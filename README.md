@@ -8,8 +8,8 @@ Criar uma interface com Vue.js que consuma os dados disponibilizados pelo JSON S
 
 <li><b>Vue.js<br>
 <li>JSON
-<li>.NET Core</b>
-<li>SqLite
+<li>.NET Core
+<li>SqLite</b>
 
 ## <b>Rodar projeto</b>
 
